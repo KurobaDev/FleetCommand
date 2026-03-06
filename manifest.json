@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Princity Monitor",
+  "version": "1.0.0",
+  "description": "Quickly monitor Princity printers, check supply levels, and launch remote web panels.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Open Princity Monitor"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "info@airbasek4.nl",
+      "strict_min_version": "109.0"
+    }
+  }
+}

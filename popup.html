@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @keyframes slideUpFade {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulseLoad {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+    }
+
+    body { 
+        width: 360px; margin: 0; 
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+        background-color: #f8fafc; color: #1e293b;
+    }
+    
+    /* --- UPDATED HEADER WITH FLEXBOX FOR LOGO --- */
+    .header {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: #fff; padding: 14px 16px; 
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        font-weight: 600; font-size: 16px; letter-spacing: 0.5px;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); position: relative; z-index: 10;
+    }
+    .header-logo {
+        width: 28px; 
+        height: 28px;
+        /* The image you provided has a blue background. If you want it round: */
+        border-radius: 50%; 
+    }
+    
+    .container { 
+        padding: 16px; 
+        animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    input, select { 
+        width: 100%; margin-bottom: 14px; padding: 12px; box-sizing: border-box; 
+        border: 1px solid #cbd5e1; border-radius: 8px; font-size: 13px;
+        background-color: #fff; outline: none; transition: all 0.2s ease;
+    }
+    input:focus, select:focus { 
+        border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    .details-card { 
+        background: #fff; padding: 16px; border-radius: 10px; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;
+        animation: slideUpFade 0.3s ease-out forwards;
+    }
+    .model-title {
+        font-size: 15px; font-weight: 700; margin: 0 0 12px 0;
+        padding-bottom: 10px; border-bottom: 1px solid #f1f5f9;
+    }
+    button {
+        width: 100%; padding: 12px; font-weight: 600; font-size: 13px;
+        border-radius: 8px; cursor: pointer; transition: all 0.2s ease;
+    }
+    .btn-primary { 
+        background: #2563eb; color: #fff; border: none; margin-top: 16px; 
+        box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+    }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-secondary {
+        background: #f8fafc; color: #475569; border: 1px solid #cbd5e1; margin-top: 8px;
+    }
+    .btn-secondary:hover { background: #f1f5f9; color: #0f172a; border-color: #94a3b8; }
+    
+    .supply-group-title {
+        margin: 14px 0 8px 0; font-size: 11px; font-weight: 700; color: #64748b;
+        text-transform: uppercase; letter-spacing: 0.8px;
+    }
+    .toner-row { margin-bottom: 12px; }
+    .toner-labels { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; margin-bottom: 6px; }
+    .toner-track { background: #f1f5f9; height: 8px; border-radius: 4px; overflow: hidden; }
+    .toner-fill { height: 100%; transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+    
+    #errorLog { 
+        color: #b91c1c; font-size: 12px; margin-bottom: 15px; padding: 12px; 
+        background: #fef2f2; border: 1px solid #f87171; border-radius: 8px; display: none; 
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="header">
+    <img src="logo.png" alt="Logo" class="header-logo">
+    <span>Princity Monitor</span>
+  </div>
+
+  <div class="container">
+      <div id="errorLog"></div>
+      
+      <div id="setup" style="display:none;">
+        <input type="text" id="domain" placeholder="Domain (e.g., demo.princity.cloud)">
+        <input type="password" id="apiKey" placeholder="Enter Princity API Key">
+        <button id="saveKey" class="btn-primary">Connect Account</button>
+      </div>
+      
+      <div id="main" style="display:none;">
+        <input type="text" id="searchInput" placeholder="Search by company, model, or serial...">
+        <select id="printerSelect">
+          <option value="">Loading printers...</option>
+        </select>
+        
+        <div id="details" class="details-card">
+          <h4 class="model-title" id="modelDisplay">Select a printer</h4>
+          <div id="supplies">
+             <div style="color: #94a3b8; font-size: 13px; text-align: center; padding: 16px 0;">No device selected</div>
+          </div>
+          <button id="remoteBtn" class="btn-primary" style="display: none;">Open Web Panel</button>
+          <button id="devicePageBtn" class="btn-secondary" style="display: none;">View in Princity</button>
+        </div>
+      </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
