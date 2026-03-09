@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Princity Monitor",
-  "version": "1.0.0",
-  "description": "Quickly monitor Princity printers, check supply levels, and launch remote web panels.",
+  "name": "FleetCommand",
+  "version": "1.2.0",
+  "description": "Enterprise-grade printer monitoring and workflow accelerator.",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
@@ -10,17 +10,21 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Open Princity Monitor"
+    "default_title": "Open FleetCommand"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "contextMenus"
   ],
   "host_permissions": [
     "<all_urls>"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "browser_specific_settings": {
     "gecko": {
-      "id": "info@airbasek4.nl",
+      "id": "developer@airbasek4.nl",
       "strict_min_version": "109.0"
     }
   }
