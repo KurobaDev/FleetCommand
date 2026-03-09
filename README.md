@@ -1,63 +1,59 @@
-# 🖨️ Princity Monitor Extension
+# 🚀 FleetCommand
 
-A sleek, lightweight browser extension for Chrome and Firefox that allows IT administrators and managed print service providers to monitor their Princity printer fleets directly from the browser toolbar.
-
-<img width="355" height="323" alt="image" src="https://github.com/user-attachments/assets/78a45632-7cf4-49ad-a6fe-86f87b5250ba" />
+**FleetCommand** is a high-performance browser extension designed for IT Professionals and Managed Print Service (MPS) providers. It transforms the way you interact with fleet data, bridging the gap between your browser-based workflow and your **Princity** environment.
 
 ---
 
-## ✨ Features
+## ✨ Advanced Features
 
-* 📊 **Real-Time Supply Levels:** Instantly check toner, drum, and developer percentages with visual progress bars.
-* 🔍 **Smart Search:** Quickly filter through hundreds of printers by Company Name, Model, or Serial Number.
-* 🌍 **Custom Domain Support:** Works with standard `*.princity.cloud` environments as well as white-labeled custom domains.
-* ⚡ **Quick Actions:** One-click access to a printer's Remote Web Panel or its detailed profile in the Princity dashboard.
-* 🔒 **Secure by Design:** API keys and domain configurations are saved locally on your machine using strict browser sandboxing (`chrome.storage.local`). No data is sent to third parties.
+* 🔍 **Tokenized Smart Search:** Search by combining terms like `Customer + IP`, `Model + Serial`, or `Location + SN`. The engine splits your query and searches across all metadata simultaneously.
+* 🖱️ **Context-Aware Searching:** Highlight any text (Serial, IP, or Model) on any webpage, right-click, and instantly find that device in FleetCommand.
+* ⚠️ **Live SNMP Alerts:** View active hardware warnings (paper jams, low staples, maintenance needs) in real-time with Unicode-supported formatting.
+* 📉 **Predictive Supply Tracking:** Monitor color-coded supply levels with intelligent estimates for remaining days (`daysLeft`) or pages.
+* 📝 **Local Sticky Notes:** Attach persistent, private notes to specific printers. Perfect for tracking onsite quirks or physical locations without cluttering the server.
+* ⚡ **Quick-Action Suite:** Instant access to secure Remote Web Panels, portals, and automated Google searches for model-specific drivers and manuals.
+* 🎨 **Premium UX:** "Dark-mode first" aesthetic featuring skeleton loaders for smooth transitions and high-visibility status glow indicators.
 
 ---
 
 ## 🚀 Installation (Developer Mode)
 
-While this extension is preparing for release on the official extension stores, you can install and run it locally right now.
-
 ### For Google Chrome / Microsoft Edge:
-1. Download or clone this repository to your computer.
-2. Open your browser and navigate to the extensions page:
-   * Chrome: `chrome://extensions/`
-   * Edge: `edge://extensions/`
-3. Turn on **Developer mode** (usually a toggle in the top right corner).
-4. Click the **Load unpacked** button.
-5. Select the folder containing this extension's files.
-6. Pin the extension to your toolbar for easy access!
+
+1. Download or clone this repository.
+2. Navigate to `chrome://extensions/`.
+3. Enable **Developer mode** (top right corner).
+4. Click **Load unpacked** and select the extension folder.
+5. Pin the extension to your toolbar!
 
 ### For Mozilla Firefox:
-1. Download or clone this repository.
-2. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
-3. Click the **Load Temporary Add-on...** button.
-4. Select the `manifest.json` file inside the extension folder.
+
+1. Navigate to `about:debugging#/runtime/this-firefox`.
+2. Click **Load Temporary Add-on...**.
+3. Select the `manifest.json` file.
 
 ---
 
-## 🛠️ Usage Setup
+## 🛠️ Setup & Security
 
-To use the extension, you need an active Princity account and an API Key.
+1. Click the icon in your toolbar.
+2. Enter your **Princity Domain** and **API Key**.
+3. **Connect Account** to sync your fleet data.
 
-1. Click the extension icon in your toolbar.
-2. Enter your Princity Domain (e.g., `demo.princity.cloud`).
-3. Enter your Princity API Key.
-4. Click **Connect Account**.
-5. Search for a printer and view its stats!
+> **Privacy Note:** Your API Key and Local Notes are stored exclusively on your device using `chrome.storage.local`. This extension communicates directly with the API endpoint; no data ever touches third-party servers.
 
 ---
 
 ## 💻 Tech Stack
 
-* **HTML/CSS:** Custom, responsive UI with smooth CSS animations.
-* **JavaScript:** Vanilla JS utilizing asynchronous API fetching and DOM manipulation.
-* **Architecture:** Manifest V3 compatible.
+* **V3 Manifest:** Fully compliant with the latest browser extension standars.
+* **Parallel Fetching:** Asynchronous architecture that loads supplies and alerts simultaneously for maximum speed.
+* **Responsive UI:** Vanilla JS and CSS variables for a lightweight, zero-dependency experience.
 
 ---
 
-## 🔒 Privacy & Security
+## ⚖️ Disclaimer
 
-This extension requires a Princity API Key to function. This key is stored securely and locally on the user's device utilizing native browser storage APIs. The extension only communicates directly with the Princity API endpoint provided by the user. The developer does not collect, transmit, store externally, or share the user's API key, usage data, or printer information with any third parties.
+**FleetCommand** is an independently developed third-party tool. It is not affiliated with, authorized, maintained, sponsored, or endorsed by **Princity** or any of its affiliates or subsidiaries. All product and company names are the registered trademarks of their original owners. The use of any trade name or trademark is for identification and compatibility purposes only.
+
+---
