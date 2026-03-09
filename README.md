@@ -28,9 +28,11 @@
 
 ### For Mozilla Firefox:
 
-1. Navigate to `about:debugging#/runtime/this-firefox`.
-2. Click **Load Temporary Add-on...**.
-3. Select the `manifest.json` file.
+1. Dowload FleetCommandFirefox.zip from the latest release.
+2. Unpack FleetCommandFirefox.zip into a folder.
+3. Navigate to `about:debugging#/runtime/this-firefox`.
+4. Click **Load Temporary Add-on...**.
+5. Select the `manifest.json` file.
 
 ---
 
