@@ -492,7 +492,10 @@ ${i18n[currentLang].copyPages} ${currentPrinter.totalPages}${alertStr}`;
         let dom = document.getElementById(domId).value.trim();
         dom = dom.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
         if (key && dom) {
-            chrome.storage.local.set({ apiKey: key, domain: dom, cacheVersion: 0 }, () => location.reload());
+            // FIX: Clears entire cache on key change to prevent ghost data
+            chrome.storage.local.remove(['deviceCache', 'flatCache', 'lastSyncTime', 'cacheVersion'], () => {
+                chrome.storage.local.set({ apiKey: key, domain: dom, cacheVersion: 0 }, () => location.reload());
+            });
         }
     }
 
@@ -620,6 +623,10 @@ async function fetchDevices(showLoadingUI) {
     } catch (err) { 
         document.getElementById('errorLog').textContent = "Failed to connect to API. Please check your credentials in Settings.";
         document.getElementById('errorLog').style.display = "block";
+        // FIX: Remove skeleton loading bars if fetch fails
+        if (showLoadingUI) {
+            document.getElementById('companyList').innerHTML = '';
+        }
     }
 }
 
