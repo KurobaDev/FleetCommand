@@ -1,18 +1,29 @@
-# 🚀 FleetCommand
+# FleetCommand 🚀
 
-**FleetCommand** is a high-performance browser extension designed for IT Professionals and Managed Print Service (MPS) providers. It transforms the way you interact with fleet data, bridging the gap between your browser-based workflow and your **Princity** environment.
+FleetCommand is an enterprise-grade browser extension designed to accelerate workflows for managed print environments. It transforms basic API monitoring into a high-performance, interactive dashboard right in your browser.
 
----
+With real-time SNMP alerting, advanced search capabilities, and deep device intelligence, FleetCommand gives support engineers and fleet managers instant access to the data they need, exactly when they need it.
 
-## ✨ Advanced Features
+## ✨ Key Features
 
-* 🔍 **Tokenized Smart Search:** Search by combining terms like `Customer + IP`, `Model + Serial`, or `Location + SN`. The engine splits your query and searches across all metadata simultaneously.
-* 🖱️ **Context-Aware Searching:** Highlight any text (Serial, IP, or Model) on any webpage, right-click, and instantly find that device in FleetCommand.
-* ⚠️ **Live SNMP Alerts:** View active hardware warnings (paper jams, low staples, maintenance needs) in real-time with Unicode-supported formatting.
-* 📉 **Predictive Supply Tracking:** Monitor color-coded supply levels with intelligent estimates for remaining days (`daysLeft`) or pages.
-* 📝 **Local Sticky Notes:** Attach persistent, private notes to specific printers. Perfect for tracking onsite quirks or physical locations without cluttering the server.
-* ⚡ **Quick-Action Suite:** Instant access to secure Remote Web Panels, portals, and automated Google searches for model-specific drivers and manuals.
-* 🎨 **Premium UX:** "Dark-mode first" aesthetic featuring skeleton loaders for smooth transitions and high-visibility status glow indicators.
+### 🔍 Smart Search & Navigation
+* **Global Smart Search:** Instantly filter across customers, locations, models, serial numbers, IPs, and MAC addresses. Optimized with debounce technology for lag-free typing.
+* **Context Menu Integration:** Highlight any serial number or IP on a webpage, right-click, and select "Search in FleetCommand" to find the device instantly.
+* **Dynamic Sorting:** Sort your fleet views by Alphabetical order, Total Pages (High to Low), or Last Seen (Recent).
+
+### 🛠 Device Intelligence & Support
+* **Real-Time SNMP Alerts:** Active hardware warnings (paper jams, toner low, maintenance required) are translated and displayed instantly.
+* **Supply Tracking:** Visual toner levels with predictive estimates (days or pages left) based on real-time data.
+* **Quick Support Tools:** Generate QR codes for easy asset scanning, or use the "Open Support Ticket" button to auto-draft an email containing all device metadata.
+* **Persistent Local Notes:** Add local sticky notes to specific serial numbers to track onsite history, hardware quirks, or specific configurations.
+* **One-Click Actions:** Access Web Panels, Portals, or auto-search for model drivers with a single click. Copy full device summaries to your clipboard instantly.
+
+### 🎨 Personalization & Data Management
+* **Multi-Language Support:** Fully localized in English and Dutch.
+* **Custom Themes:** Choose from Light, Dark, The Matrix, Deep Ocean, Crimson Red, Forest Green, or Midnight Purple.
+* **Compact Mode:** Toggle a condensed list view to fit more devices on your screen.
+* **White-Labeling:** Customize the header app name to match your organization.
+* **Data Portability:** Export your entire fleet inventory to CSV, or backup/restore your extension preferences via JSON.
 
 ---
 
