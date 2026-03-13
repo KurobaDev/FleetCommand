@@ -4,6 +4,8 @@ FleetCommand is an enterprise-grade browser extension designed to accelerate wor
 
 With real-time SNMP alerting, advanced search capabilities, and deep device intelligence, FleetCommand gives support engineers and fleet managers instant access to the data they need, exactly when they need it.
 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/eadjflkjfgkkdddljiobbejkclalfbnd.svg?label=Chrome%20Web%20Store&logo=googlechrome&color=blue)](https://chrome.google.com/webstore/detail/eadjflkjfgkkdddljiobbejkclalfbnd) [![Firefox Add-ons](https://img.shields.io/amo/v/developer@airbasek4.nl.svg?label=Firefox%20Add-ons&logo=firefox&color=FF7139)](https://addons.mozilla.org/en-US/firefox/addon/developer@airbasek4.nl/)
+
 ## ✨ Key Features
 
 ### 🔍 Smart Search & Navigation
