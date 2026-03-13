@@ -20,11 +20,11 @@ const i18n = {
         filterLocations: "Filter locations...", deviceDetails: "Device Details", totalPages: "Total Pages:", lastSeen: "Last Seen:",
         webPanel: "Web Panel", portal: "Portal", drivers: "Drivers", copyInfo: "Copy Info", openTicket: "Open Support Ticket",
         localNotes: "Local Notes", showQR: "Show QR", scanSerial: "Scan for Asset Serial", typeNotes: "Type notes here...",
-        preferences: "Preferences", apiConnection: "API Connection", saveRestart: "Save & Restart", language: "Language",
+        preferences: "Preferences", apiConnection: "API Connection", saveRestart: "Save & Reload", language: "Language",
         extensionFeatures: "Extension Features", assetQRCodes: "Asset QR Codes", quickTicket: "Quick-Ticket Button",
         supportEmail: "Support Email (e.g., helpdesk@company.com)", troubleshooting: "Troubleshooting",
-        clearCacheDesc: "If fleet data is missing or out of sync, clear the local cache to force a full server re-sync.",
-        clearCacheBtn: "Clear Local Cache", copied: "Copied! \u2713", companyProfile: "Company Profile", locationFolder: "Location", noMatching: "No matching customers, locations or devices found.",
+        factoryResetDesc: "Completely reset the extension. Logs out and deletes all local data and notes.",
+        factoryResetBtn: "Factory Reset", copied: "Copied! \u2713", companyProfile: "Company Profile", locationFolder: "Location", noMatching: "No matching customers, locations or devices found.",
         activeAlerts: "Active Alerts", ticketSubj: "Printer Issue - SN: ", ticketBodyDevice: "Device: ", ticketBodyLocation: "Location: ",
         ticketBodyDesc: "Description of issue:\n", personalization: "Personalization", appTheme: "App Theme",
         themeMatrix: "The Matrix", themeOcean: "Deep Ocean", themeCrimson: "Crimson Red", themeForest: "Forest Green", themePurple: "Midnight Purple",
@@ -32,7 +32,12 @@ const i18n = {
         dataManagement: "Data Management", exportBtn: "Export JSON", importBtn: "Import JSON", exportCsvBtn: "Export Inventory to CSV", rememberState: "Remember Last Screen",
         copyDevice: "Device:", copyModel: "Orig. Model:", copySN: "SN:", copyIP: "IP:", copyMAC: "MAC:", copyPages: "Pages:", copyAlerts: "Alerts:",
         autoSync: "Auto-Sync Fleet Data", syncInterval: "Sync Interval", min15: "15 Minutes", min30: "30 Minutes", hour1: "1 Hour", hour4: "4 Hours", hour24: "24 Hours",
-        sortName: "Sort: Alphabetical", sortPages: "Sort: Total Pages (High to Low)", sortRecent: "Sort: Last Seen First"
+        sortName: "Sort: Alphabetical", sortPages: "Sort: Total Pages (High to Low)", sortRecent: "Sort: Last Seen First",
+        showDeleted: "Show Deleted Devices",
+        toastSaved: "Saved! Refreshing data...", toastErrorInputs: "Please fill in both the domain and API key.",
+        apiErrorMsg: "Failed to connect to API. Please check your credentials.", dataCleared: "All data cleared.", importSuccess: "Settings imported successfully!",
+        resetConfirmTitle: "Are you sure?", resetConfirmBody: "This will delete all your settings, API keys, and local notes. You will be logged out.", cancel: "Cancel",
+        setupDisclaimer: "Note: If you are currently logged into the web portal, an invalid API key might still be accepted due to active browser cookies."
     },
     nl: {
         accountSetup: "Account Instellen", domainPlaceholder: "Domein (bijv. demo.fleetcommand.com)", apiKeyPlaceholder: "API Sleutel",
@@ -40,11 +45,11 @@ const i18n = {
         filterLocations: "Filter locaties...", deviceDetails: "Apparaat Details", totalPages: "Totaal Pagina's:", lastSeen: "Laatst Gezien:",
         webPanel: "Webpaneel", portal: "Portaal", drivers: "Drivers", copyInfo: "Kopieer Info", openTicket: "Open Support Ticket",
         localNotes: "Lokale Notities", showQR: "Toon QR", scanSerial: "Scan voor Serienummer", typeNotes: "Typ hier notities...",
-        preferences: "Instellingen", apiConnection: "API Verbinding", saveRestart: "Opslaan & Herstarten", language: "Taal",
+        preferences: "Instellingen", apiConnection: "API Verbinding", saveRestart: "Opslaan & Herladen", language: "Taal",
         extensionFeatures: "Extensie Functies", assetQRCodes: "Asset QR Codes", quickTicket: "Quick-Ticket Knop",
         supportEmail: "Support E-mail (bijv. helpdesk@bedrijf.nl)", troubleshooting: "Probleemoplossing",
-        clearCacheDesc: "Als de lijst leeg of verouderd is, leeg dan de cache om de data opnieuw op te halen.",
-        clearCacheBtn: "Lokale Cache Legen", copied: "Gekopieerd! \u2713", companyProfile: "Bedrijfsprofiel", locationFolder: "Locatie", noMatching: "Geen klanten, locaties of apparaten gevonden.",
+        factoryResetDesc: "Reset de extensie volledig. Logt uit en verwijdert alle lokale data en notities.",
+        factoryResetBtn: "Fabrieksinstellingen", copied: "Gekopieerd! \u2713", companyProfile: "Bedrijfsprofiel", locationFolder: "Locatie", noMatching: "Geen klanten, locaties of apparaten gevonden.",
         activeAlerts: "Actieve Meldingen", ticketSubj: "Printer Probleem - SN: ", ticketBodyDevice: "Apparaat: ", ticketBodyLocation: "Locatie: ",
         ticketBodyDesc: "Beschrijving van het probleem:\n", personalization: "Personalisatie", appTheme: "App Thema",
         themeMatrix: "The Matrix", themeOcean: "Diepe Oceaan", themeCrimson: "Donkerrood", themeForest: "Bosgroen", themePurple: "Nachtpaars",
@@ -52,7 +57,12 @@ const i18n = {
         dataManagement: "Data Beheer", exportBtn: "Exporteer JSON", importBtn: "Importeer JSON", exportCsvBtn: "Exporteer Apparaten naar CSV", rememberState: "Onthoud Laatste Scherm",
         copyDevice: "Apparaat:", copyModel: "Orig. Model:", copySN: "Serienummer:", copyIP: "IP-Adres:", copyMAC: "MAC-Adres:", copyPages: "Pagina's:", copyAlerts: "Meldingen:",
         autoSync: "Automatisch Syncen", syncInterval: "Sync Interval", min15: "15 Minuten", min30: "30 Minuten", hour1: "1 Uur", hour4: "4 Uur", hour24: "24 Uur",
-        sortName: "Sorteer: Alfabetisch", sortPages: "Sorteer: Tellerstanden (Hoog naar Laag)", sortRecent: "Sorteer: Laatst Gezien"
+        sortName: "Sorteer: Alfabetisch", sortPages: "Sorteer: Tellerstanden (Hoog naar Laag)", sortRecent: "Sorteer: Laatst Gezien",
+        showDeleted: "Toon Verwijderde Apparaten",
+        toastSaved: "Opgeslagen! Data wordt vernieuwd...", toastErrorInputs: "Vul a.u.b. zowel het domein als de API key in.",
+        apiErrorMsg: "Kan niet verbinden met de API. Controleer je instellingen.", dataCleared: "Alle data is gewist.", importSuccess: "Instellingen succesvol geïmporteerd!",
+        resetConfirmTitle: "Weet je het zeker?", resetConfirmBody: "Dit verwijdert al je instellingen, API sleutels en lokale notities. Je wordt uitgelogd.", cancel: "Annuleren",
+        setupDisclaimer: "Let op: Als je momenteel bent ingelogd op het webportaal, kan een onjuiste API-sleutel alsnog werken door actieve browsercookies."
     }
 };
 
@@ -77,17 +87,91 @@ function setLanguage(lang) {
     currentLang = lang;
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
+        if (i18n[lang] && i18n[lang][key]) el.innerHTML = i18n[lang][key];
     });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
-        if (i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
+        if (i18n[lang] && i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
     });
 }
+
+function showToast(message, isError = false) {
+    let toast = document.getElementById('toastNotification');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toastNotification';
+        toast.style.cssText = `
+            position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 40px);
+            color: white; padding: 10px 22px; border-radius: 30px; font-size: 13px; font-weight: 500;
+            z-index: 10000; opacity: 0; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); pointer-events: none; white-space: nowrap;
+        `;
+        document.body.appendChild(toast);
+    }
+    
+    toast.style.background = isError ? '#ef4444' : '#10b981';
+    toast.textContent = message;
+    
+    void toast.offsetWidth; 
+    toast.style.transform = 'translate(-50%, 0)';
+    toast.style.opacity = '1';
+    
+    clearTimeout(toast.hideTimeout);
+    toast.hideTimeout = setTimeout(() => {
+        toast.style.transform = 'translate(-50%, 40px)';
+        toast.style.opacity = '0';
+    }, 3000);
+}
+
+window.saveCredentials = async function(keyId, domId, isSetup = false) {
+    const keyEl = document.getElementById(keyId);
+    const domEl = document.getElementById(domId);
+    if (!keyEl || !domEl) return;
+    
+    const key = keyEl.value.trim();
+    let dom = domEl.value.trim();
+    dom = dom.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+    
+    if (key && dom) {
+        deviceHierarchy = {};
+        allDevicesFlat = [];
+        
+        const compList = document.getElementById('companyList');
+        const sResults = document.getElementById('searchResults');
+        if (compList) compList.innerHTML = '';
+        if (sResults) sResults.innerHTML = '';
+
+        await chrome.storage.local.remove([
+            'deviceCache', 'flatCache', 'lastSyncTime', 'cacheVersion',
+            'savedSlide', 'savedCompany', 'savedLocation', 'savedPrinterSN'
+        ]);
+        
+        await chrome.storage.local.set({ apiKey: key, domain: dom, cacheVersion: 0 });
+        API_KEY = key;
+        BASE_DOMAIN = dom;
+        API_URL = `https://${dom}/api`;
+
+        if (isSetup) {
+            const setupBlock = document.getElementById('setup');
+            const mainBlock = document.getElementById('main');
+            if (setupBlock) setupBlock.style.display = 'none';
+            if (mainBlock) mainBlock.style.display = 'block';
+            fetchDevices(true);
+        } else {
+            showToast(i18n[currentLang].toastSaved, false);
+            setTimeout(() => {
+                window.location.reload(); 
+            }, 1000);
+        }
+    } else {
+        showToast(i18n[currentLang].toastErrorInputs, true);
+    }
+};
 
 let API_URL = ""; let BASE_DOMAIN = ""; let API_KEY = "";
 let deviceHierarchy = {}; let allDevicesFlat = []; let localNicknames = {}; 
 let currentPrinter = null; let currentViewCompany = ""; let currentViewLocation = "";
+let PREF_SHOW_DELETED = false;
 
 let currentSlideIndex = 0; 
 let previousSlideBeforeSettings = 0;
@@ -119,42 +203,49 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch(e) {}
 
     const allData = await chrome.storage.local.get(null);
-    let { apiKey, domain, deviceCache, flatCache, cacheVersion, pendingSearch, theme, prefShowQR, prefShowTicket, prefTicketEmail, prefLang, prefTheme, prefAppName, prefCompact, prefRememberState, savedSlide, savedCompany, savedLocation, savedPrinterSN, prefAutoSync, prefSyncInterval, lastSyncTime } = allData;
+    let { apiKey, domain, deviceCache, flatCache, cacheVersion, pendingSearch, theme, prefShowQR, prefShowTicket, prefTicketEmail, prefLang, prefTheme, prefAppName, prefCompact, prefRememberState, savedSlide, savedCompany, savedLocation, savedPrinterSN, prefAutoSync, prefSyncInterval, lastSyncTime, prefShowDeleted } = allData;
     
     if (prefAutoSync === undefined) prefAutoSync = true;
     if (!prefSyncInterval) prefSyncInterval = 60; 
+    
+    PREF_SHOW_DELETED = !!prefShowDeleted;
 
     for (const key in allData) {
         if (key.startsWith('nickname_')) localNicknames[key.replace('nickname_', '')] = allData[key];
     }
 
     currentLang = prefLang || 'en';
-    document.getElementById('langSelect').value = currentLang;
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) langSelect.value = currentLang;
     setLanguage(currentLang);
 
     const currentTheme = prefTheme || theme || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
-    document.getElementById('settingTheme').value = currentTheme;
+    const settingTheme = document.getElementById('settingTheme');
+    if (settingTheme) settingTheme.value = currentTheme;
+    
     const themeBtn = document.getElementById('themeToggleBtn');
-    
-    const isDarkTheme = ['dark', 'matrix', 'ocean', 'crimson', 'forest', 'purple'].includes(currentTheme);
-    themeBtn.innerHTML = isDarkTheme ? ICON_SUN : ICON_MOON;
-    
-    themeBtn.addEventListener('click', () => {
-        let isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-        let newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        document.getElementById('settingTheme').value = newTheme;
-        chrome.storage.local.set({ prefTheme: newTheme, theme: newTheme });
-        themeBtn.innerHTML = isDark ? ICON_MOON : ICON_SUN;
-    });
+    if (themeBtn) {
+        const isDarkTheme = ['dark', 'matrix', 'ocean', 'crimson', 'forest', 'purple'].includes(currentTheme);
+        themeBtn.innerHTML = isDarkTheme ? ICON_SUN : ICON_MOON;
+        themeBtn.addEventListener('click', () => {
+            let isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+            let newTheme = isDark ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            if(settingTheme) settingTheme.value = newTheme;
+            chrome.storage.local.set({ prefTheme: newTheme, theme: newTheme });
+            themeBtn.innerHTML = isDark ? ICON_MOON : ICON_SUN;
+        });
+    }
 
-    document.getElementById('settingTheme').addEventListener('change', (e) => {
-        const t = e.target.value;
-        document.documentElement.setAttribute('data-theme', t);
-        chrome.storage.local.set({ prefTheme: t });
-        themeBtn.innerHTML = (t !== 'light') ? ICON_SUN : ICON_MOON;
-    });
+    if (settingTheme) {
+        settingTheme.addEventListener('change', (e) => {
+            const t = e.target.value;
+            document.documentElement.setAttribute('data-theme', t);
+            chrome.storage.local.set({ prefTheme: t });
+            if(themeBtn) themeBtn.innerHTML = (t !== 'light') ? ICON_SUN : ICON_MOON;
+        });
+    }
 
     document.querySelectorAll('.pwd-toggle').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -169,285 +260,347 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    document.getElementById('headerAppName').textContent = prefAppName || "FleetCommand";
-    document.getElementById('settingAppName').value = prefAppName || "";
-    document.getElementById('settingAppName').addEventListener('input', (e) => {
-        const name = e.target.value.trim() || "FleetCommand";
-        chrome.storage.local.set({ prefAppName: name });
-        document.getElementById('headerAppName').textContent = escapeHTML(name);
-    });
+    const headerAppName = document.getElementById('headerAppName');
+    const settingAppName = document.getElementById('settingAppName');
+    if (headerAppName) headerAppName.textContent = prefAppName || "FleetCommand";
+    if (settingAppName) {
+        settingAppName.value = prefAppName || "";
+        settingAppName.addEventListener('input', (e) => {
+            const name = e.target.value.trim() || "FleetCommand";
+            chrome.storage.local.set({ prefAppName: name });
+            if (headerAppName) headerAppName.textContent = escapeHTML(name);
+        });
+    }
 
+    const settingCompact = document.getElementById('settingCompact');
     if(prefCompact) document.body.classList.add('compact-mode');
-    document.getElementById('settingCompact').checked = !!prefCompact;
-    document.getElementById('settingCompact').addEventListener('change', (e) => {
-        chrome.storage.local.set({ prefCompact: e.target.checked });
-        document.body.classList.toggle('compact-mode', e.target.checked);
-    });
+    if (settingCompact) {
+        settingCompact.checked = !!prefCompact;
+        settingCompact.addEventListener('change', (e) => {
+            chrome.storage.local.set({ prefCompact: e.target.checked });
+            document.body.classList.toggle('compact-mode', e.target.checked);
+        });
+    }
 
-    document.getElementById('settingRememberState').checked = prefRememberState !== false;
-    document.getElementById('settingRememberState').addEventListener('change', (e) => {
-        chrome.storage.local.set({ prefRememberState: e.target.checked });
-        if(!e.target.checked) chrome.storage.local.remove(['savedSlide', 'savedCompany', 'savedLocation', 'savedPrinterSN']);
-    });
+    const settingRememberState = document.getElementById('settingRememberState');
+    if (settingRememberState) {
+        settingRememberState.checked = prefRememberState !== false;
+        settingRememberState.addEventListener('change', (e) => {
+            chrome.storage.local.set({ prefRememberState: e.target.checked });
+            if(!e.target.checked) chrome.storage.local.remove(['savedSlide', 'savedCompany', 'savedLocation', 'savedPrinterSN']);
+        });
+    }
+
+    const settingShowDeleted = document.getElementById('settingShowDeleted');
+    if (settingShowDeleted) {
+        settingShowDeleted.checked = PREF_SHOW_DELETED;
+        settingShowDeleted.addEventListener('change', async (e) => {
+            PREF_SHOW_DELETED = e.target.checked;
+            await chrome.storage.local.set({ prefShowDeleted: e.target.checked });
+            await chrome.storage.local.remove(['deviceCache', 'flatCache', 'cacheVersion']);
+            
+            const icon = document.getElementById('syncBtn')?.querySelector('svg');
+            if (icon) icon.classList.add('spinning');
+            fetchDevices(false).finally(() => { 
+                if (icon) icon.classList.remove('spinning'); 
+            });
+        });
+    }
 
     const autoSyncToggle = document.getElementById('settingAutoSync');
     const intervalSelect = document.getElementById('settingSyncInterval');
     const intervalRow = document.getElementById('syncIntervalRow');
 
-    autoSyncToggle.checked = prefAutoSync;
-    intervalSelect.value = prefSyncInterval.toString();
-    intervalRow.style.display = autoSyncToggle.checked ? 'flex' : 'none';
+    if (autoSyncToggle && intervalSelect && intervalRow) {
+        autoSyncToggle.checked = prefAutoSync;
+        intervalSelect.value = prefSyncInterval.toString();
+        intervalRow.style.display = autoSyncToggle.checked ? 'flex' : 'none';
 
-    autoSyncToggle.addEventListener('change', (e) => {
-        chrome.storage.local.set({ prefAutoSync: e.target.checked });
-        intervalRow.style.display = e.target.checked ? 'flex' : 'none';
-    });
+        autoSyncToggle.addEventListener('change', (e) => {
+            chrome.storage.local.set({ prefAutoSync: e.target.checked });
+            intervalRow.style.display = e.target.checked ? 'flex' : 'none';
+        });
 
-    intervalSelect.addEventListener('change', (e) => {
-        chrome.storage.local.set({ prefSyncInterval: parseInt(e.target.value) });
-    });
+        intervalSelect.addEventListener('change', (e) => {
+            chrome.storage.local.set({ prefSyncInterval: parseInt(e.target.value) });
+        });
+    }
 
     const qrToggle = document.getElementById('settingShowQR');
     const ticketToggle = document.getElementById('settingShowTicket');
     const emailInput = document.getElementById('settingTicketEmail');
-    const langSelect = document.getElementById('langSelect');
 
-    qrToggle.checked = !!prefShowQR;
-    ticketToggle.checked = !!prefShowTicket;
-    emailInput.value = prefTicketEmail || "";
-    emailInput.style.display = prefShowTicket ? 'block' : 'none';
+    if (qrToggle) {
+        qrToggle.checked = !!prefShowQR;
+        qrToggle.addEventListener('change', (e) => chrome.storage.local.set({ prefShowQR: e.target.checked }));
+    }
+    
+    if (ticketToggle && emailInput) {
+        ticketToggle.checked = !!prefShowTicket;
+        emailInput.value = prefTicketEmail || "";
+        emailInput.style.display = prefShowTicket ? 'block' : 'none';
 
-    qrToggle.addEventListener('change', (e) => chrome.storage.local.set({ prefShowQR: e.target.checked }));
-    ticketToggle.addEventListener('change', (e) => {
-        chrome.storage.local.set({ prefShowTicket: e.target.checked });
-        emailInput.style.display = e.target.checked ? 'block' : 'none';
-    });
-    let emailSaveTimeout;
-    emailInput.addEventListener('input', (e) => {
-        clearTimeout(emailSaveTimeout);
-        emailSaveTimeout = setTimeout(() => chrome.storage.local.set({ prefTicketEmail: e.target.value.trim() }), 500);
-    });
-    langSelect.addEventListener('change', (e) => {
-        chrome.storage.local.set({ prefLang: e.target.value });
-        setLanguage(e.target.value);
-    });
+        ticketToggle.addEventListener('change', (e) => {
+            chrome.storage.local.set({ prefShowTicket: e.target.checked });
+            emailInput.style.display = e.target.checked ? 'block' : 'none';
+        });
+        let emailSaveTimeout;
+        emailInput.addEventListener('input', (e) => {
+            clearTimeout(emailSaveTimeout);
+            emailSaveTimeout = setTimeout(() => chrome.storage.local.set({ prefTicketEmail: e.target.value.trim() }), 500);
+        });
+    }
+    
+    if (langSelect) {
+        langSelect.addEventListener('change', (e) => {
+            chrome.storage.local.set({ prefLang: e.target.value });
+            setLanguage(e.target.value);
+        });
+    }
 
-    document.getElementById('backBtn1').addEventListener('click', () => slide(0));
-    document.getElementById('backBtn2').addEventListener('click', () => slide(1));
-    document.getElementById('backBtn3').addEventListener('click', () => slide(document.getElementById('searchInput').value ? 0 : 2));
-    document.getElementById('backBtn4').addEventListener('click', () => slide(previousSlideBeforeSettings));
+    if(document.getElementById('backBtn1')) document.getElementById('backBtn1').addEventListener('click', () => slide(0));
+    if(document.getElementById('backBtn2')) document.getElementById('backBtn2').addEventListener('click', () => slide(1));
+    if(document.getElementById('backBtn3')) document.getElementById('backBtn3').addEventListener('click', () => slide(document.getElementById('searchInput')?.value ? 0 : 2));
+    if(document.getElementById('backBtn4')) document.getElementById('backBtn4').addEventListener('click', () => slide(previousSlideBeforeSettings));
 
-    document.getElementById('settingsBtn').addEventListener('click', () => {
-        if (currentSlideIndex !== 4) {
-            previousSlideBeforeSettings = currentSlideIndex;
-        }
-        document.getElementById('setDomain').value = BASE_DOMAIN;
-        document.getElementById('setApiKey').value = API_KEY;
-        slide(4);
-    });
+    const settingsBtn = document.getElementById('settingsBtn');
+    if (settingsBtn) {
+        settingsBtn.addEventListener('click', () => {
+            if (currentSlideIndex !== 4) {
+                previousSlideBeforeSettings = currentSlideIndex;
+            }
+            if(document.getElementById('setDomain')) document.getElementById('setDomain').value = BASE_DOMAIN;
+            if(document.getElementById('setApiKey')) document.getElementById('setApiKey').value = API_KEY;
+            slide(4);
+        });
+    }
 
-    document.getElementById('printerSort').addEventListener('change', () => {
-        renderPrinters(currentViewCompany, currentViewLocation);
-    });
+    const printerSort = document.getElementById('printerSort');
+    if (printerSort) {
+        printerSort.addEventListener('change', () => {
+            renderPrinters(currentViewCompany, currentViewLocation);
+        });
+    }
 
     const notesToggle = document.getElementById('notesToggle');
     const notesTextarea = document.getElementById('localNotes');
     const qrBtn = document.getElementById('qrBtn');
     const qrContainer = document.getElementById('qrContainer');
     
-    notesToggle.addEventListener('click', (e) => {
-        if(e.target === qrBtn) return; 
-        notesToggle.classList.toggle('open');
-        notesTextarea.classList.toggle('open');
-    });
+    if (notesToggle && notesTextarea) {
+        notesToggle.addEventListener('click', (e) => {
+            if(qrBtn && e.target === qrBtn) return; 
+            notesToggle.classList.toggle('open');
+            notesTextarea.classList.toggle('open');
+        });
 
-    qrBtn.addEventListener('click', () => qrContainer.classList.toggle('open'));
+        let saveTimeout;
+        notesTextarea.addEventListener('input', () => {
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(() => {
+                if (currentPrinter) {
+                    chrome.storage.local.set({ [`note_${currentPrinter.serialNumber}`]: notesTextarea.value });
+                }
+            }, 400);
+        });
+    }
 
-    let saveTimeout;
-    notesTextarea.addEventListener('input', () => {
-        clearTimeout(saveTimeout);
-        saveTimeout = setTimeout(() => {
-            if (currentPrinter) {
-                chrome.storage.local.set({ [`note_${currentPrinter.serialNumber}`]: notesTextarea.value });
-            }
-        }, 400);
-    });
+    if (qrBtn && qrContainer) {
+        qrBtn.addEventListener('click', () => qrContainer.classList.toggle('open'));
+    }
 
     const editBtn = document.getElementById('editNameBtn');
     const modelDisplay = document.getElementById('modelDisplay');
     const modelInput = document.getElementById('modelInput');
     
-    editBtn.addEventListener('click', () => {
-        modelDisplay.style.display = 'none';
-        editBtn.style.display = 'none';
-        modelInput.style.display = 'block';
-        modelInput.value = localNicknames[currentPrinter.serialNumber] || currentPrinter.modelName;
-        modelInput.focus();
-    });
+    if (editBtn && modelDisplay && modelInput) {
+        editBtn.addEventListener('click', () => {
+            modelDisplay.style.display = 'none';
+            editBtn.style.display = 'none';
+            modelInput.style.display = 'block';
+            modelInput.value = localNicknames[currentPrinter.serialNumber] || currentPrinter.modelName;
+            modelInput.focus();
+        });
 
-    async function saveNickname() {
-        const newName = modelInput.value.trim();
-        if(newName && newName !== currentPrinter.modelName) {
-            localNicknames[currentPrinter.serialNumber] = newName;
-            await chrome.storage.local.set({ [`nickname_${currentPrinter.serialNumber}`]: newName });
-            modelDisplay.textContent = newName;
-        } else {
-            delete localNicknames[currentPrinter.serialNumber];
-            await chrome.storage.local.remove(`nickname_${currentPrinter.serialNumber}`);
-            modelDisplay.textContent = currentPrinter.modelName;
+        async function saveNickname() {
+            const newName = modelInput.value.trim();
+            if(newName && newName !== currentPrinter.modelName) {
+                localNicknames[currentPrinter.serialNumber] = newName;
+                await chrome.storage.local.set({ [`nickname_${currentPrinter.serialNumber}`]: newName });
+                modelDisplay.textContent = newName;
+            } else {
+                delete localNicknames[currentPrinter.serialNumber];
+                await chrome.storage.local.remove(`nickname_${currentPrinter.serialNumber}`);
+                modelDisplay.textContent = currentPrinter.modelName;
+            }
+            modelInput.style.display = 'none';
+            modelDisplay.style.display = 'block';
+            editBtn.style.display = 'block';
         }
-        modelInput.style.display = 'none';
-        modelDisplay.style.display = 'block';
-        editBtn.style.display = 'block';
+
+        modelInput.addEventListener('blur', saveNickname);
+        modelInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') { e.preventDefault(); modelInput.blur(); } });
     }
 
-    modelInput.addEventListener('blur', saveNickname);
-    modelInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') { e.preventDefault(); modelInput.blur(); } });
-
-    document.getElementById('networkDisplay').addEventListener('click', (e) => {
-        const badge = e.target.closest('.network-badge');
-        if (badge && badge.dataset.copy) {
-            if(badge.innerHTML.includes("MAC")) {
-                window.open(`https://macvendors.com/query/${badge.dataset.copy}`, '_blank');
-                return;
+    const networkDisplay = document.getElementById('networkDisplay');
+    if (networkDisplay) {
+        networkDisplay.addEventListener('click', (e) => {
+            const badge = e.target.closest('.network-badge');
+            if (badge && badge.dataset.copy) {
+                if(badge.innerHTML.includes("MAC")) {
+                    window.open(`https://macvendors.com/query/${badge.dataset.copy}`, '_blank');
+                    return;
+                }
+                navigator.clipboard.writeText(badge.dataset.copy);
+                const original = badge.innerHTML;
+                badge.innerHTML = escapeHTML(i18n[currentLang].copied); 
+                setTimeout(() => { badge.innerHTML = original; }, 1500);
             }
-            navigator.clipboard.writeText(badge.dataset.copy);
-            const original = badge.innerHTML;
-            badge.innerHTML = escapeHTML(i18n[currentLang].copied); 
-            setTimeout(() => { badge.innerHTML = original; }, 1500);
-        }
-    });
-
-    document.getElementById('copySummaryBtn').addEventListener('click', (e) => {
-        if(!currentPrinter) return;
-        const btn = e.currentTarget;
-        const alertHtml = document.getElementById('alertContainer').innerHTML;
-        
-        let alerts = alertHtml.replace(/<[^>]*>?/gm, '\n').replace(/&nbsp;/g, ' ').trim();
-        if(alerts.includes(':')) {
-            alerts = alerts.substring(alerts.indexOf(':') + 1).trim();
-        } else {
-            alerts = "";
-        }
-        
-        const nameToUse = localNicknames[currentPrinter.serialNumber] || currentPrinter.modelName;
-        const alertStr = alerts ? `\n\n${i18n[currentLang].copyAlerts}\n${alerts}` : '';
-        
-        const summary = `${i18n[currentLang].copyDevice} ${nameToUse}
-${i18n[currentLang].copyModel} ${currentPrinter.modelName}
-${i18n[currentLang].copySN} ${currentPrinter.serialNumber}
-${i18n[currentLang].copyIP} ${currentPrinter.ip}
-${i18n[currentLang].copyMAC} ${currentPrinter.mac}
-${i18n[currentLang].copyPages} ${currentPrinter.totalPages}${alertStr}`;
-        
-        navigator.clipboard.writeText(summary);
-        btn.innerHTML = escapeHTML(i18n[currentLang].copied);
-        setTimeout(() => btn.innerHTML = escapeHTML(i18n[currentLang].copyInfo), 1500);
-    });
-
-    document.getElementById('exportDataBtn').addEventListener('click', async () => {
-        const items = await chrome.storage.local.get(null);
-        delete items.deviceCache; delete items.flatCache; delete items.cacheVersion; delete items.lastSyncTime;
-        const blob = new Blob([JSON.stringify(items, null, 2)], {type: 'application/json'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `FleetCommand_Settings_${new Date().toISOString().split('T')[0]}.json`;
-        a.click();
-    });
-
-    document.getElementById('importDataBtn').addEventListener('click', () => document.getElementById('importFileInput').click());
-    document.getElementById('importFileInput').addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if(!file) return;
-        const reader = new FileReader();
-        reader.onload = async (e) => {
-            try {
-                const data = JSON.parse(e.target.result);
-                await chrome.storage.local.set(data);
-                alert(currentLang === 'nl' ? "Instellingen succesvol geïmporteerd! De app herstart nu." : "Settings imported successfully! App will restart.");
-                location.reload();
-            } catch(err) {
-                alert("Error importing file. Invalid JSON format.");
-            }
-        };
-        reader.readAsText(file);
-    });
-
-    document.getElementById('exportCsvBtn').addEventListener('click', () => {
-        if (!allDevicesFlat || allDevicesFlat.length === 0) return alert("No devices found to export.");
-        
-        const headers = ["Company", "Location", "Model", "Serial Number", "IP", "MAC", "Total Pages", "Last Seen", "Status"];
-        const rows = allDevicesFlat.map(d => {
-            const lastSeenStr = d.lastUpdate ? new Date(d.lastUpdate).toLocaleString() : '';
-            return [
-                `"${d.companyName || ''}"`, `"${d.locationName || ''}"`, `"${d.modelName || ''}"`, `"${d.serialNumber || ''}"`,
-                `"${d.ip || ''}"`, `"${d.mac || ''}"`, `"${d.totalPages || 0}"`, `"${lastSeenStr}"`, `"${d.status || ''}"`
-            ];
         });
-        
-        const csvContent = [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `FleetCommand_Inventory_${new Date().toISOString().split('T')[0]}.csv`;
-        a.click();
-    });
+    }
+
+    const copySummaryBtn = document.getElementById('copySummaryBtn');
+    if (copySummaryBtn) {
+        copySummaryBtn.addEventListener('click', (e) => {
+            if(!currentPrinter) return;
+            const btn = e.currentTarget;
+            const alertHtml = document.getElementById('alertContainer')?.innerHTML || "";
+            
+            let alerts = alertHtml.replace(/<[^>]*>?/gm, '\n').replace(/&nbsp;/g, ' ').trim();
+            if(alerts.includes(':')) {
+                alerts = alerts.substring(alerts.indexOf(':') + 1).trim();
+            } else {
+                alerts = "";
+            }
+            
+            const nameToUse = localNicknames[currentPrinter.serialNumber] || currentPrinter.modelName;
+            const alertStr = alerts ? `\n\n${i18n[currentLang].copyAlerts}\n${alerts}` : '';
+            
+            const summary = `${i18n[currentLang].copyDevice} ${nameToUse}\n${i18n[currentLang].copyModel} ${currentPrinter.modelName}\n${i18n[currentLang].copySN} ${currentPrinter.serialNumber}\n${i18n[currentLang].copyIP} ${currentPrinter.ip}\n${i18n[currentLang].copyMAC} ${currentPrinter.mac}\n${i18n[currentLang].copyPages} ${currentPrinter.totalPages}${alertStr}`;
+            
+            navigator.clipboard.writeText(summary);
+            btn.innerHTML = escapeHTML(i18n[currentLang].copied);
+            setTimeout(() => btn.innerHTML = escapeHTML(i18n[currentLang].copyInfo), 1500);
+        });
+    }
+
+    const exportDataBtn = document.getElementById('exportDataBtn');
+    if (exportDataBtn) {
+        exportDataBtn.addEventListener('click', async () => {
+            const items = await chrome.storage.local.get(null);
+            delete items.deviceCache; delete items.flatCache; delete items.cacheVersion; delete items.lastSyncTime;
+            const blob = new Blob([JSON.stringify(items, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `FleetCommand_Settings_${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+        });
+    }
+
+    const importDataBtn = document.getElementById('importDataBtn');
+    const importFileInput = document.getElementById('importFileInput');
+    if (importDataBtn && importFileInput) {
+        importDataBtn.addEventListener('click', () => importFileInput.click());
+        importFileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if(!file) return;
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    await chrome.storage.local.set(data);
+                    showToast(i18n[currentLang].importSuccess, false);
+                    setTimeout(() => location.reload(), 1500);
+                } catch(err) {
+                    showToast("Error importing file. Invalid JSON format.", true);
+                }
+            };
+            reader.readAsText(file);
+        });
+    }
+
+    const exportCsvBtn = document.getElementById('exportCsvBtn');
+    if (exportCsvBtn) {
+        exportCsvBtn.addEventListener('click', () => {
+            if (!allDevicesFlat || allDevicesFlat.length === 0) return alert("No devices found to export.");
+            
+            const headers = ["Company", "Location", "Model", "Serial Number", "IP", "MAC", "Total Pages", "Last Seen", "Status"];
+            const rows = allDevicesFlat.map(d => {
+                const lastSeenStr = d.lastUpdate ? new Date(d.lastUpdate).toLocaleString() : '';
+                return [
+                    `"${d.companyName || ''}"`, `"${d.locationName || ''}"`, `"${d.modelName || ''}"`, `"${d.serialNumber || ''}"`,
+                    `"${d.ip || ''}"`, `"${d.mac || ''}"`, `"${d.totalPages || 0}"`, `"${lastSeenStr}"`, `"${d.status || ''}"`
+                ];
+            });
+            
+            const csvContent = [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `FleetCommand_Inventory_${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+        });
+    }
 
     function restoreState() {
         if (prefRememberState !== false && savedSlide > 0) {
-            
             if (savedSlide === 3 && savedPrinterSN) {
                 const p = allDevicesFlat.find(d => d.serialNumber === savedPrinterSN);
                 if (p) {
                     currentViewCompany = p.companyName;
                     currentViewLocation = p.locationName;
                     
-                    document.getElementById('headerCompanyName').textContent = p.companyName;
+                    const headerComp = document.getElementById('headerCompanyName');
+                    if(headerComp) headerComp.textContent = p.companyName;
                     if (deviceHierarchy[p.companyName]) renderLocations(p.companyName);
                     
-                    document.getElementById('headerLocationName').textContent = p.locationName;
+                    const headerLoc = document.getElementById('headerLocationName');
+                    if(headerLoc) headerLoc.textContent = p.locationName;
                     if (deviceHierarchy[p.companyName]?.[p.locationName]) renderPrinters(p.companyName, p.locationName);
                     
                     openPrinterDetails(p);
                     return;
                 }
             } 
-            
             if (savedSlide === 2 && savedCompany && savedLocation && deviceHierarchy[savedCompany]?.[savedLocation]) {
                 currentViewCompany = savedCompany;
                 currentViewLocation = savedLocation;
                 
-                document.getElementById('headerCompanyName').textContent = savedCompany;
+                const headerComp = document.getElementById('headerCompanyName');
+                if(headerComp) headerComp.textContent = savedCompany;
                 renderLocations(savedCompany);
                 
-                document.getElementById('headerLocationName').textContent = savedLocation;
+                const headerLoc = document.getElementById('headerLocationName');
+                if(headerLoc) headerLoc.textContent = savedLocation;
                 renderPrinters(savedCompany, savedLocation);
                 slide(2);
                 return;
             } 
-            
             if (savedSlide === 1 && savedCompany && deviceHierarchy[savedCompany]) {
                 currentViewCompany = savedCompany;
-                document.getElementById('headerCompanyName').textContent = savedCompany;
+                const headerComp = document.getElementById('headerCompanyName');
+                if(headerComp) headerComp.textContent = savedCompany;
                 renderLocations(savedCompany);
                 slide(1);
                 return;
             }
-            
             slide(0);
         } else {
             slide(0);
         }
     }
 
+    const setupBlock = document.getElementById('setup');
+    const mainBlock = document.getElementById('main');
+    
     if (apiKey && domain) {
         BASE_DOMAIN = domain;
         API_KEY = apiKey;
         API_URL = `https://${domain}/api`;
-        document.getElementById('setup').style.display = 'none';
-        document.getElementById('main').style.display = 'block';
+        if(setupBlock) setupBlock.style.display = 'none';
+        if(mainBlock) mainBlock.style.display = 'block';
 
         if (deviceCache && flatCache && cacheVersion === CACHE_VERSION) {
             deviceHierarchy = deviceCache;
@@ -455,9 +608,15 @@ ${i18n[currentLang].copyPages} ${currentPrinter.totalPages}${alertStr}`;
             renderCompanies();
             
             if (pendingSearch) {
-                document.getElementById('searchInput').value = pendingSearch;
-                document.getElementById('companyList').style.display = 'none';
-                document.getElementById('searchResults').style.display = 'block';
+                const sInput = document.getElementById('searchInput');
+                if(sInput) sInput.value = pendingSearch;
+                
+                const cList = document.getElementById('companyList');
+                if(cList) cList.style.display = 'none';
+                
+                const sResults = document.getElementById('searchResults');
+                if(sResults) sResults.style.display = 'block';
+                
                 renderGlobalSearch(pendingSearch.toLowerCase().trim());
                 chrome.storage.local.remove('pendingSearch'); 
                 
@@ -471,69 +630,92 @@ ${i18n[currentLang].copyPages} ${currentPrinter.totalPages}${alertStr}`;
             if (prefAutoSync && lastSyncTime) {
                 const intervalMs = prefSyncInterval * 60 * 1000;
                 if (Date.now() - lastSyncTime > intervalMs) {
-                    const icon = document.getElementById('syncBtn').querySelector('svg');
-                    icon.classList.add('spinning');
-                    fetchDevices(false).finally(() => icon.classList.remove('spinning'));
+                    const icon = document.getElementById('syncBtn')?.querySelector('svg');
+                    if (icon) icon.classList.add('spinning');
+                    fetchDevices(false).finally(() => { if(icon) icon.classList.remove('spinning'); });
                 }
             }
-
         } else {
             fetchDevices(true);
         }
     } else {
-        document.getElementById('setup').style.display = 'block';
+        if(setupBlock) setupBlock.style.display = 'block';
     }
 
-    document.getElementById('saveKey').addEventListener('click', () => saveCredentials('apiKey', 'domain'));
-    document.getElementById('saveSettingsBtn').addEventListener('click', () => saveCredentials('setApiKey', 'setDomain'));
+    const saveKeyBtn = document.getElementById('saveKey');
+    if (saveKeyBtn) saveKeyBtn.addEventListener('click', () => window.saveCredentials('apiKey', 'domain', true));
 
-    function saveCredentials(keyId, domId) {
-        const key = document.getElementById(keyId).value.trim();
-        let dom = document.getElementById(domId).value.trim();
-        dom = dom.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
-        if (key && dom) {
-            // FIX: Clears entire cache on key change to prevent ghost data
-            chrome.storage.local.remove(['deviceCache', 'flatCache', 'lastSyncTime', 'cacheVersion'], () => {
-                chrome.storage.local.set({ apiKey: key, domain: dom, cacheVersion: 0 }, () => location.reload());
-            });
-        }
-    }
+    const saveSettingsBtn = document.getElementById('saveSettingsBtn');
+    if (saveSettingsBtn) saveSettingsBtn.addEventListener('click', () => window.saveCredentials('setApiKey', 'setDomain', false));
 
-    document.getElementById('clearCacheBtn').addEventListener('click', () => {
-        chrome.storage.local.remove(['deviceCache', 'flatCache', 'lastSyncTime'], () => {
-            alert(currentLang === 'nl' ? "Cache geleegd! De app herstart om de data op te halen." : "Cache cleared! The app will now restart to fetch fresh data.");
-            location.reload();
+    const clearCacheBtn = document.getElementById('clearCacheBtn');
+    const confirmModal = document.getElementById('confirmModal');
+    const cancelResetBtn = document.getElementById('cancelResetBtn');
+    const confirmResetBtn = document.getElementById('confirmResetBtn');
+
+    if (clearCacheBtn && confirmModal) {
+        clearCacheBtn.addEventListener('click', () => {
+            confirmModal.style.display = 'flex';
+            void confirmModal.offsetWidth; 
+            confirmModal.classList.add('open');
         });
-    });
 
-    document.getElementById('searchInput').addEventListener('input', debounce((e) => {
-        const query = e.target.value.toLowerCase().trim();
-        if (query === "") {
-            document.getElementById('companyList').style.display = 'block';
-            document.getElementById('searchResults').style.display = 'none';
-            renderCompanies();
-        } else {
-            document.getElementById('companyList').style.display = 'none';
-            document.getElementById('searchResults').style.display = 'block';
-            renderGlobalSearch(query);
-        }
-    }, 250));
+        cancelResetBtn.addEventListener('click', () => {
+            confirmModal.classList.remove('open');
+            setTimeout(() => confirmModal.style.display = 'none', 200);
+        });
 
-    document.getElementById('locationSearchInput').addEventListener('input', debounce((e) => {
-        const query = e.target.value.toLowerCase().trim();
-        const currentCompany = document.getElementById('headerCompanyName').textContent;
-        renderLocations(currentCompany, query);
-    }, 200));
+        confirmResetBtn.addEventListener('click', () => {
+            chrome.storage.local.clear(() => {
+                confirmModal.classList.remove('open');
+                showToast(i18n[currentLang].dataCleared, false);
+                setTimeout(() => location.reload(), 1000); 
+            });
+        });
+    }
 
-    document.getElementById('syncBtn').addEventListener('click', (e) => {
-        const icon = e.currentTarget.querySelector('svg');
-        icon.classList.add('spinning');
-        fetchDevices(false).finally(() => icon.classList.remove('spinning'));
-    });
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce((e) => {
+            const query = e.target.value.toLowerCase().trim();
+            const cList = document.getElementById('companyList');
+            const sResults = document.getElementById('searchResults');
+            if(!cList || !sResults) return;
+            
+            if (query === "") {
+                cList.style.display = 'block';
+                sResults.style.display = 'none';
+                renderCompanies();
+            } else {
+                cList.style.display = 'none';
+                sResults.style.display = 'block';
+                renderGlobalSearch(query);
+            }
+        }, 250));
+    }
+
+    const locationSearchInput = document.getElementById('locationSearchInput');
+    if (locationSearchInput) {
+        locationSearchInput.addEventListener('input', debounce((e) => {
+            const query = e.target.value.toLowerCase().trim();
+            const currentCompany = document.getElementById('headerCompanyName')?.textContent || "";
+            renderLocations(currentCompany, query);
+        }, 200));
+    }
+
+    const syncBtn = document.getElementById('syncBtn');
+    if (syncBtn) {
+        syncBtn.addEventListener('click', (e) => {
+            const icon = e.currentTarget.querySelector('svg');
+            if(icon) icon.classList.add('spinning');
+            fetchDevices(false).finally(() => { if(icon) icon.classList.remove('spinning'); });
+        });
+    }
 });
 
 function slide(index) {
     const track = document.getElementById('sliderTrack');
+    if (!track) return;
     
     if (Math.abs(currentSlideIndex - index) > 1) {
         const slides = document.querySelectorAll('.slide');
@@ -561,7 +743,7 @@ function slide(index) {
     currentSlideIndex = index;
     
     if (index === 0) {
-        setTimeout(() => document.getElementById('searchInput').focus(), 300);
+        setTimeout(() => document.getElementById('searchInput')?.focus(), 300);
     }
 
     if (index !== 4) {
@@ -580,12 +762,14 @@ function slide(index) {
 
 async function fetchDevices(showLoadingUI) {
     const compList = document.getElementById('companyList');
-    if (showLoadingUI) compList.innerHTML = '<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>';
+    if (showLoadingUI && compList) compList.innerHTML = '<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>';
 
     try {
         const res = await fetch(`${API_URL}/v3/devices`, {
             method: 'POST',
+            credentials: 'include',
             headers: { "Content-Type": "application/json", "App-auth-key": API_KEY },
+            cache: "no-store", 
             body: JSON.stringify({
                 cursorParams: { offset: 0, limit: 1000, filters: [], orders: [] },
                 fieldIds: ["Device.id", "Device.model.name", "Device.serialNumber", "Device.company.name", "Device.location.name", "Device.status", "Device.counter.mono", "Device.counter.color", "Device.ip", "Device.mac", "Device.hostname", "Device.lastUpdate"]
@@ -593,12 +777,20 @@ async function fetchDevices(showLoadingUI) {
         });
 
         if (!res.ok) throw new Error("API Connection failed");
+        
+        const data = await res.json();
+        
+        if (data.error || data.status === "error" || !Array.isArray(data.entries)) {
+            throw new Error("Invalid API Key or Bad Response");
+        }
 
-        const { entries = [] } = await res.json();
+        const entries = data.entries || [];
         const tree = {};
         const flatList = [];
 
         entries.forEach(d => {
+            if (d.status === "DELETED" && !PREF_SHOW_DELETED) return;
+
             const cName = d.company?.name || d["Device.company.name"] || "General";
             const lName = d.location?.name || d["Device.location.name"] || "Main Location";
             const mono = d.counter?.mono || d["Device.counter.mono"] || 0;
@@ -619,19 +811,33 @@ async function fetchDevices(showLoadingUI) {
         allDevicesFlat = flatList;
         await chrome.storage.local.set({ deviceCache: tree, flatCache: flatList, cacheVersion: CACHE_VERSION, lastSyncTime: Date.now() });
         renderCompanies();
+        
         if (showLoadingUI) slide(0);
+        
+        const errLog = document.getElementById('errorLog');
+        if (errLog) errLog.style.display = "none";
+        
     } catch (err) { 
-        document.getElementById('errorLog').textContent = "Failed to connect to API. Please check your credentials in Settings.";
-        document.getElementById('errorLog').style.display = "block";
-        // FIX: Remove skeleton loading bars if fetch fails
-        if (showLoadingUI) {
-            document.getElementById('companyList').innerHTML = '';
+        deviceHierarchy = {};
+        allDevicesFlat = [];
+        await chrome.storage.local.remove(['deviceCache', 'flatCache']);
+        
+        renderCompanies();
+        if (showLoadingUI && compList) compList.innerHTML = '';
+        
+        showToast(i18n[currentLang].apiErrorMsg, true);
+        
+        const errLog = document.getElementById('errorLog');
+        if (errLog) {
+            errLog.textContent = i18n[currentLang].apiErrorMsg;
+            errLog.style.display = "block";
         }
     }
 }
 
 function renderCompanies() {
     const list = document.getElementById('companyList');
+    if(!list) return;
     list.innerHTML = '';
     Object.keys(deviceHierarchy).sort().forEach(company => {
         const div = document.createElement('div');
@@ -639,8 +845,10 @@ function renderCompanies() {
         div.innerHTML = `<div class="list-item-content">${ICON_COMPANY} <div style="font-weight:600;">${escapeHTML(company)}</div></div>`;
         div.onclick = () => {
             currentViewCompany = company;
-            document.getElementById('headerCompanyName').textContent = company;
-            document.getElementById('locationSearchInput').value = '';
+            const headerComp = document.getElementById('headerCompanyName');
+            if(headerComp) headerComp.textContent = company;
+            const locSearch = document.getElementById('locationSearchInput');
+            if(locSearch) locSearch.value = '';
             renderLocations(company);
             slide(1);
         };
@@ -650,6 +858,7 @@ function renderCompanies() {
 
 function renderLocations(company, query = "") {
     const list = document.getElementById('locationList');
+    if(!list) return;
     list.innerHTML = '';
     if (!deviceHierarchy[company]) return;
     Object.keys(deviceHierarchy[company]).filter(loc => loc.toLowerCase().includes(query)).sort().forEach(location => {
@@ -658,7 +867,8 @@ function renderLocations(company, query = "") {
         div.innerHTML = `<div><div style="font-weight:600;">${escapeHTML(location)}</div> <span class="item-subtitle">${deviceHierarchy[company][location].length} device(s)</span></div>`;
         div.onclick = () => {
             currentViewLocation = location;
-            document.getElementById('headerLocationName').textContent = location;
+            const headerLoc = document.getElementById('headerLocationName');
+            if(headerLoc) headerLoc.textContent = location;
             renderPrinters(company, location);
             slide(2);
         };
@@ -668,12 +878,13 @@ function renderLocations(company, query = "") {
 
 function renderPrinters(company, location) {
     const list = document.getElementById('printerList');
+    if(!list) return;
     list.innerHTML = '';
     
     if(!deviceHierarchy[company] || !deviceHierarchy[company][location]) return;
 
     let printers = [...deviceHierarchy[company][location]];
-    const sortMode = document.getElementById('printerSort').value;
+    const sortMode = document.getElementById('printerSort')?.value || 'name';
 
     printers.sort((a,b) => {
         if(sortMode === 'name') {
@@ -703,6 +914,7 @@ function renderPrinters(company, location) {
 
 function renderGlobalSearch(query) {
     const list = document.getElementById('searchResults');
+    if(!list) return;
     list.innerHTML = '';
     const terms = query.split(/\s+/).filter(t => t.length > 0);
 
@@ -717,8 +929,10 @@ function renderGlobalSearch(query) {
         div.innerHTML = `<div class="list-item-content">${ICON_COMPANY} <div><div style="font-weight:600;">${escapeHTML(company)}</div><span class="item-subtitle">${escapeHTML(i18n[currentLang].companyProfile)}</span></div></div>`;
         div.onclick = () => {
             currentViewCompany = company;
-            document.getElementById('headerCompanyName').textContent = company;
-            document.getElementById('locationSearchInput').value = '';
+            const headerComp = document.getElementById('headerCompanyName');
+            if(headerComp) headerComp.textContent = company;
+            const locSearch = document.getElementById('locationSearchInput');
+            if(locSearch) locSearch.value = '';
             renderLocations(company);
             slide(1);
         };
@@ -742,9 +956,11 @@ function renderGlobalSearch(query) {
         div.onclick = () => {
             currentViewCompany = match.company;
             currentViewLocation = match.location;
-            document.getElementById('headerCompanyName').textContent = match.company;
+            const headerComp = document.getElementById('headerCompanyName');
+            if(headerComp) headerComp.textContent = match.company;
             renderLocations(match.company);
-            document.getElementById('headerLocationName').textContent = match.location;
+            const headerLoc = document.getElementById('headerLocationName');
+            if(headerLoc) headerLoc.textContent = match.location;
             renderPrinters(match.company, match.location);
             slide(2);
         };
@@ -777,11 +993,11 @@ function renderGlobalSearch(query) {
 async function openPrinterDetails(printer) {
     currentPrinter = printer; 
     
-    document.getElementById('modelInput').style.display = 'none';
-    document.getElementById('modelDisplay').style.display = 'block';
-    document.getElementById('editNameBtn').style.display = 'block';
+    if(document.getElementById('modelInput')) document.getElementById('modelInput').style.display = 'none';
+    if(document.getElementById('modelDisplay')) document.getElementById('modelDisplay').style.display = 'block';
+    if(document.getElementById('editNameBtn')) document.getElementById('editNameBtn').style.display = 'block';
 
-    document.getElementById('modelDisplay').textContent = localNicknames[printer.serialNumber] || printer.modelName;
+    if(document.getElementById('modelDisplay')) document.getElementById('modelDisplay').textContent = localNicknames[printer.serialNumber] || printer.modelName;
     
     let lastSeenStr = i18n[currentLang].unknown || "Unknown";
     if (printer.lastUpdate) {
@@ -789,38 +1005,49 @@ async function openPrinterDetails(printer) {
         lastSeenStr = d.toLocaleDateString(currentLang === 'nl' ? 'nl-NL' : 'en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
     }
     
-    document.getElementById('lastUpdateDisplay').innerHTML = escapeHTML(lastSeenStr);
-    document.getElementById('meterDisplay').innerHTML = escapeHTML((printer.totalPages || 0).toLocaleString(currentLang === 'nl' ? 'nl-NL' : 'en-US'));
+    if(document.getElementById('lastUpdateDisplay')) document.getElementById('lastUpdateDisplay').innerHTML = escapeHTML(lastSeenStr);
+    if(document.getElementById('meterDisplay')) document.getElementById('meterDisplay').innerHTML = escapeHTML((printer.totalPages || 0).toLocaleString(currentLang === 'nl' ? 'nl-NL' : 'en-US'));
     
-    document.getElementById('networkDisplay').innerHTML = `
-        <div class="network-badge" data-copy="${escapeHTML(printer.serialNumber)}" title="Click to copy">SN: ${escapeHTML(printer.serialNumber)}</div>
-        <div class="network-badge" data-copy="${escapeHTML(printer.ip)}" title="Click to copy">IP: ${escapeHTML(printer.ip)}</div>
-        <div class="network-badge" data-copy="${escapeHTML(printer.mac)}" title="Click to lookup vendor">MAC: ${escapeHTML(printer.mac)}</div>
-        <div class="network-badge" data-copy="${escapeHTML(printer.hostname)}" title="Click to copy">HOST: ${escapeHTML(printer.hostname)}</div>`;
+    if(document.getElementById('networkDisplay')) {
+        document.getElementById('networkDisplay').innerHTML = `
+            <div class="network-badge" data-copy="${escapeHTML(printer.serialNumber)}" title="Click to copy">SN: ${escapeHTML(printer.serialNumber)}</div>
+            <div class="network-badge" data-copy="${escapeHTML(printer.ip)}" title="Click to copy">IP: ${escapeHTML(printer.ip)}</div>
+            <div class="network-badge" data-copy="${escapeHTML(printer.mac)}" title="Click to lookup vendor">MAC: ${escapeHTML(printer.mac)}</div>
+            <div class="network-badge" data-copy="${escapeHTML(printer.hostname)}" title="Click to copy">HOST: ${escapeHTML(printer.hostname)}</div>`;
+    }
 
-    document.getElementById('remoteBtn').style.display = 'block';
-    document.getElementById('devicePageBtn').style.display = 'block';
-    document.getElementById('driverBtn').style.display = 'block';
-    document.getElementById('copySummaryBtn').style.display = 'block';
-    
-    document.getElementById('remoteBtn').onclick = () => window.open(`https://${BASE_DOMAIN}/ws/device/webPanel/${printer.id}`, '_blank');
-    document.getElementById('devicePageBtn').onclick = () => window.open(`https://${BASE_DOMAIN}/device/${printer.id}/`, '_blank');
-    document.getElementById('driverBtn').onclick = () => window.open(`https://www.google.com/search?q=${encodeURIComponent(printer.modelName + ' drivers manual')}`, '_blank');
+    if(document.getElementById('remoteBtn')) {
+        document.getElementById('remoteBtn').style.display = 'block';
+        document.getElementById('remoteBtn').onclick = () => window.open(`https://${BASE_DOMAIN}/ws/device/webPanel/${printer.id}`, '_blank');
+    }
+    if(document.getElementById('devicePageBtn')) {
+        document.getElementById('devicePageBtn').style.display = 'block';
+        document.getElementById('devicePageBtn').onclick = () => window.open(`https://${BASE_DOMAIN}/device/${printer.id}/`, '_blank');
+    }
+    if(document.getElementById('driverBtn')) {
+        document.getElementById('driverBtn').style.display = 'block';
+        document.getElementById('driverBtn').onclick = () => window.open(`https://www.google.com/search?q=${encodeURIComponent(printer.modelName + ' drivers manual')}`, '_blank');
+    }
+    if(document.getElementById('copySummaryBtn')) {
+        document.getElementById('copySummaryBtn').style.display = 'block';
+    }
 
     const { prefShowQR, prefShowTicket, prefTicketEmail } = await chrome.storage.local.get(['prefShowQR', 'prefShowTicket', 'prefTicketEmail']);
     
-    if(prefShowQR) {
-        document.getElementById('qrBtn').style.display = 'inline';
+    const qrBtn = document.getElementById('qrBtn');
+    const qrContainer = document.getElementById('qrContainer');
+    if(prefShowQR && qrBtn && qrContainer) {
+        qrBtn.style.display = 'inline';
         const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(printer.serialNumber)}`;
-        document.getElementById('qrImage').src = qrUrl;
-        document.getElementById('qrContainer').classList.remove('open');
-    } else {
-        document.getElementById('qrBtn').style.display = 'none';
-        document.getElementById('qrContainer').classList.remove('open');
+        if(document.getElementById('qrImage')) document.getElementById('qrImage').src = qrUrl;
+        qrContainer.classList.remove('open');
+    } else if (qrBtn && qrContainer) {
+        qrBtn.style.display = 'none';
+        qrContainer.classList.remove('open');
     }
 
-    if(prefShowTicket && prefTicketEmail) {
-        const ticketBtn = document.getElementById('ticketBtn');
+    const ticketBtn = document.getElementById('ticketBtn');
+    if(prefShowTicket && prefTicketEmail && ticketBtn) {
         ticketBtn.style.display = 'block';
         ticketBtn.onclick = () => {
             const subject = encodeURIComponent(`${i18n[currentLang].ticketSubj}${printer.serialNumber}`);
@@ -828,23 +1055,26 @@ async function openPrinterDetails(printer) {
             const body = encodeURIComponent(`${i18n[currentLang].ticketBodyDevice}${nameToUse}\n${i18n[currentLang].copyModel} ${printer.modelName}\n${i18n[currentLang].ticketBodyLocation}${printer.companyName} - ${printer.locationName}\nIP: ${printer.ip}\n\n${i18n[currentLang].ticketBodyDesc}`);
             window.location.href = `mailto:${prefTicketEmail}?subject=${subject}&body=${body}`;
         };
-    } else {
-        document.getElementById('ticketBtn').style.display = 'none';
+    } else if (ticketBtn) {
+        ticketBtn.style.display = 'none';
     }
 
     const noteKey = `note_${printer.serialNumber}`;
     const stored = await chrome.storage.local.get(noteKey);
     const textarea = document.getElementById('localNotes');
     const toggle = document.getElementById('notesToggle');
-    textarea.value = stored[noteKey] || "";
-    if (textarea.value) { textarea.classList.add('open'); toggle.classList.add('open'); }
-    else { textarea.classList.remove('open'); toggle.classList.remove('open'); }
+    if (textarea && toggle) {
+        textarea.value = stored[noteKey] || "";
+        if (textarea.value) { textarea.classList.add('open'); toggle.classList.add('open'); }
+        else { textarea.classList.remove('open'); toggle.classList.remove('open'); }
+    }
 
     loadPrinterData(printer.id);
     slide(3);
 }
 
-async function fetchSafeJson(url, options) {
+async function fetchSafeJson(url, options = {}) {
+    options.credentials = 'include'; 
     const res = await fetch(url, options);
     if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
     return res.json();
@@ -853,40 +1083,45 @@ async function fetchSafeJson(url, options) {
 async function loadPrinterData(id) {
     const container = document.getElementById('supplies');
     const alertBox = document.getElementById('alertContainer');
-    container.innerHTML = '<div class="skeleton"></div><div class="skeleton"></div>';
-    alertBox.style.display = 'none';
+    if (container) container.innerHTML = '<div class="skeleton"></div><div class="skeleton"></div>';
+    if (alertBox) alertBox.style.display = 'none';
 
     try {
         const [sup, al] = await Promise.all([
-            fetchSafeJson(`${API_URL}/v1/supplies?deviceId=${encodeURIComponent(id)}`, {headers:{"App-auth-key":API_KEY}}),
-            fetchSafeJson(`${API_URL}/v1/snmpalerts?deviceId=${encodeURIComponent(id)}&active=true`, {headers:{"App-auth-key":API_KEY}})
+            fetchSafeJson(`${API_URL}/v1/supplies?deviceId=${encodeURIComponent(id)}`, {
+                headers:{"App-auth-key":API_KEY}, cache: "no-store" 
+            }),
+            fetchSafeJson(`${API_URL}/v1/snmpalerts?deviceId=${encodeURIComponent(id)}&active=true`, {
+                headers:{"App-auth-key":API_KEY}, cache: "no-store"
+            })
         ]);
 
-        if (al.length) {
+        if (al.length && alertBox) {
             alertBox.innerHTML = `<strong>\u26A0\uFE0F ${escapeHTML(i18n[currentLang].activeAlerts)}:</strong><br/>` + al.map(a => `- ${escapeHTML(translateAlert(a.description, currentLang))}`).join('<br/>');
             alertBox.style.display = 'block';
         }
 
-        container.innerHTML = '';
-        const groups = sup.reduce((acc, s) => {
-            const t = (s.model?.type || 'OTHER').toUpperCase();
-            (acc[t] = acc[t] || []).push(s);
-            return acc;
-        }, {});
+        if (container) {
+            container.innerHTML = '';
+            const groups = sup.reduce((acc, s) => {
+                const t = (s.model?.type || 'OTHER').toUpperCase();
+                (acc[t] = acc[t] || []).push(s);
+                return acc;
+            }, {});
 
-        for (const [type, items] of Object.entries(groups)) {
-            container.insertAdjacentHTML('beforeend', `<div class="supply-group-title">${escapeHTML(type)}</div>`);
-            items.forEach(s => {
-                const color = (s.model?.color || 'BLACK').toUpperCase();
-                const level = s.level?.current ?? s.level ?? 0;
-                let est = s.daysLeft ? `(~${s.daysLeft}d)` : s.pagesLeft ? `(~${s.pagesLeft}p)` : "";
-                const bg = color.includes('CYAN') ? '#00AEEF' : color.includes('MAGENTA') ? '#EC008C' : color.includes('YELLOW') ? '#F2C80F' : 'var(--toner-black)';
-                container.insertAdjacentHTML('beforeend', `<div class="toner-row"><div class="toner-labels"><span>${escapeHTML(color)}</span><span>${level}% ${escapeHTML(est)}</span></div>
-                    <div class="toner-track"><div class="toner-fill" style="width:${level}%; background-color:${bg};"></div></div></div>`);
-            });
+            for (const [type, items] of Object.entries(groups)) {
+                container.insertAdjacentHTML('beforeend', `<div class="supply-group-title">${escapeHTML(type)}</div>`);
+                items.forEach(s => {
+                    const color = (s.model?.color || 'BLACK').toUpperCase();
+                    const level = s.level?.current ?? s.level ?? 0;
+                    let est = s.daysLeft ? `(~${s.daysLeft}d)` : s.pagesLeft ? `(~${s.pagesLeft}p)` : "";
+                    const bg = color.includes('CYAN') ? '#00AEEF' : color.includes('MAGENTA') ? '#EC008C' : color.includes('YELLOW') ? '#F2C80F' : 'var(--toner-black)';
+                    container.insertAdjacentHTML('beforeend', `<div class="toner-row"><div class="toner-labels"><span>${escapeHTML(color)}</span><span>${level}% ${escapeHTML(est)}</span></div>
+                        <div class="toner-track"><div class="toner-fill" style="width:${level}%; background-color:${bg};"></div></div></div>`);
+                });
+            }
         }
     } catch (e) { 
-        console.warn("FleetCommand API Error:", e);
-        container.innerHTML = '<div class="loading-text" style="font-size: 11px; color: var(--text-muted);">Error loading supplies data.</div>'; 
+        if(container) container.innerHTML = '<div class="loading-text" style="font-size: 11px; color: var(--text-muted);">Error loading supplies data.</div>'; 
     }
 }
