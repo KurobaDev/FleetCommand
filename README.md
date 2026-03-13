@@ -55,6 +55,16 @@ With real-time SNMP alerting, advanced search capabilities, and deep device inte
 
 > **Privacy Note:** Your API Key and Local Notes are stored exclusively on your device using `chrome.storage.local`. This extension communicates directly with the API endpoint; no data ever touches third-party servers.
 
+> **Note on Authentication:** FleetCommand utilizes secure API keys. However, if you are actively logged into the web portal in another Chrome tab, the extension will piggyback on your active session cookies for faster, seamless fetching. Invalid API keys are strictly rejected regardless of session state.
+---
+
+## 🛠️ Troubleshooting
+
+* **Data isn't syncing or devices are missing?**
+Go to the **Preferences** (gear icon) -> **Data Management** and ensure "Show Deleted Devices" is toggled correctly. If issues persist, scroll down to **Troubleshooting** and click **Factory Reset** to clear the local cache and fetch fresh data from the server.
+
+* **Cannot connect to API?**
+Double-check that your domain does not include `https://` or trailing slashes (e.g., `mycompany.com` is correct, `https://mycompany.com/` is incorrect).
 ---
 
 ## 💻 Tech Stack
